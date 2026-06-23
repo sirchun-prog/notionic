@@ -57,9 +57,10 @@ module.exports = {
     }
     return config
   },
-  allowedDevOrigins: [
-    process.env.REPLIT_DEV_DOMAIN,
-  ].filter(Boolean),
+  allowedDevOrigins:
+  process.env.REPLIT_DEV_DOMAIN
+    ? [process.env.REPLIT_DEV_DOMAIN]
+    : [],
   images: {
     remotePatterns: [
       { protocol: 'https', hostname: 'api.craft.do' },
